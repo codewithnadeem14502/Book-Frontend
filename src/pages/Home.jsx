@@ -10,11 +10,12 @@ import BooksTable from "../components/BooksTable";
 const Home = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  console.log("backend url ", backendUrl);
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:5050/books")
+      .get(`${backendUrl}/books`)
       .then((res) => {
         setBooks(res.data.data);
         setLoading(false);
