@@ -25,6 +25,6 @@ jobs:
       - name: Pull image from docker hub
         run: docker pull codewithnadeem/reactjs:latest
       - name: Delete old container
-        run: docker rm -f reactjs-app-container
+        run: docker rm -f reactjs-container
       - name: Run Docker Container
-        run: docker run -d -p 5173:80 --name reactjs-app-container  codewithnadeem/reactjs
+        run: docker run -d -p 5173:80 --name reactjs-container  codewithnadeem/reactjs
